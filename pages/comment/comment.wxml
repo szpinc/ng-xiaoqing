@@ -1,0 +1,23 @@
+<view>
+  <view class='text-area'>
+    <textarea bindinput='comment_value' placeholder='请输入祝福语' value='{{content}}'></textarea>
+  </view>
+  <view class='title'>
+    <text>请选择祝福模板</text>
+  </view>
+  <scroll-view class='box' scroll-y='true'>
+    <block wx:key="{{item.id}}" wx:for="{{models}}" wx:for-item="item">
+      <view class='model'>
+        <view class='model-list' bindtap='selectClick' id='{{item.id}}'>
+          <view class='content' data-content='{{item.content}}'>{{item.content}}</view>
+          <view class='pic' wx:if="{{item.is_show}}">
+            <icon type='success_no_circle' size='20'></icon>
+          </view>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+  <view class='footer'>
+    <button type='primary' class='btn-submit' bindtap='submit'>提交</button>
+  </view>
+</view>

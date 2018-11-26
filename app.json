@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/comment/comment",    
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#a51b4c",
+    "navigationBarTitleText": "南工校庆留言墙",
+    "navigationBarTextStyle": "white"
+  }
+}

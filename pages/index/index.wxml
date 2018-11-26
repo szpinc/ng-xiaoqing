@@ -1,0 +1,40 @@
+<view>
+
+  <view class='head-image'>
+    
+  </view>
+
+  <view class='banner'>
+    <swiper indicator-dots="true" autoplay="true" interval="3000" duration="500" circular="true">
+      <block wx:for="{{banners}}" wx:for-item="banner" wx:key="{{banner.id}}">
+        <swiper-item>
+          <image src="{{banner.url}}" class="banner-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='head'>
+    <text class='title'>祝福母校</text>
+  </view>
+  <view class='comment-list'>
+    <scroll-view bindscrolltolower="lower" scroll-y="true" style='height:{{window_height}}rpx;'>
+      <view class='comment' wx:for="{{comments}}" wx:key="{{item.id}}" wx:for-item="item">
+        <view class='comment-left'>
+          <image src='{{item.headUrl}}' class='user-head-pic'></image>
+          <text class='user-name'>{{item.username}}</text>
+        </view>
+        <view class='comment-right'>
+          <view class='comment-msg'>
+            <text class='msg'>第{{item.id}}位为母校祝福</text>
+          </view>
+          <view class='comment-content'>
+            <text>{{item.content}}</text>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class='footer'>
+    <button type='primary' class='btn-submit' open-type="getUserInfo" bindgetuserinfo="getUserInfo" bindtap='goToCommentPage'>写留言</button>
+  </view>
+</view>
